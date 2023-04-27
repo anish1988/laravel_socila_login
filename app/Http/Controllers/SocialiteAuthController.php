@@ -25,6 +25,7 @@ class SocialiteAuthController extends Controller
         try {
 
             $googleUser = Socialite::driver('google')->user();
+            //dd($googleUser);
             $user = User::where('google_id', $googleUser->id)->first();
 
             if($user){
